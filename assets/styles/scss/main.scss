@@ -14,6 +14,7 @@ html {
 
 .wrapper {
   width: 90%;
+  max-width: 84rem;
   margin: 0 auto;
 }
 
@@ -29,6 +30,7 @@ html {
 }
 
 .keyboard__input-field {
+  width: 100%;
   font-size: 2rem;
 }
 

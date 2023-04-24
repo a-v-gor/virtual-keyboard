@@ -1,11 +1,17 @@
 {
-  "extends": ["airbnb-base"],
+  "extends": ["eslint-config-airbnb-base"],
   "env": {
     "es6": true,
     "browser": true
   },
   "rules": {
     "linebreak-style": "off",
-    "import/extensions": ["ignorePackages"]
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "ignorePackages": true
+      }
+    ]
   }
 }
