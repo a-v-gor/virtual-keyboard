@@ -68,4 +68,7 @@ export default function createBody() {
   document.querySelector('.keyboard__input-field').setAttribute('cols', '100');
   addNode('div', 'keyboard__btns-wrapper', document.querySelector('.wrapper.keyboard'));
   addBtnsToRow();
+  addNode('div', 'keyboard__info', document.querySelector('.wrapper.keyboard'));
+  addNode('p', 'keyboard__info-p', document.querySelector('.keyboard__info'), 'Клавиатура создана в ОС Windows.');
+  addNode('p', 'keyboard__info-p', document.querySelector('.keyboard__info'), 'Переключение раскладки: Left Ctrl + Left Alt.');
 }
