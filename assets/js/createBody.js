@@ -11,11 +11,11 @@ export default function createBody() {
   function addBtnsToRow() {
     for (let rNum = 0; rNum < 5; rNum += 1) {
       let btnNum = 9;
-      if (rNum === 0) {
+      if (rNum === 0 || rNum === 3) {
         btnNum = 14;
       } else if (rNum === 1) {
         btnNum = 15;
-      } else if (rNum === 2 || rNum === 3) {
+      } else if (rNum === 2) {
         btnNum = 13;
       }
       addNode('div', 'keyboard__btns-row', document.querySelector('.keyboard__btns-wrapper'));

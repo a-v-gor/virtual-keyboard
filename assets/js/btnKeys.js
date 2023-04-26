@@ -43,6 +43,7 @@ const btnKeys = {
     Quote: '\'',
     Enter: 'Enter',
     ShiftLeft: 'Shift ⇑',
+    IntlBackslash: '\\',
     KeyZ: 'Z',
     KeyX: 'X',
     KeyC: 'C',
