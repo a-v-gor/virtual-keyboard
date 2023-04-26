@@ -88,4 +88,8 @@ html {
       background: linear-gradient(180deg, #d1d1d1 100%, #ffffff 0%);
     }
   }
+
+  &_pressed {
+    background: #ffa500;
+  }
 }
