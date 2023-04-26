@@ -1,22 +1,12 @@
 export default function createButtons() {
-  const row1 = ['~', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', '←'];
-  const row2 = ['↹', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\', 'Del'];
-  const row3 = ['CapsLock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', '\'', 'Enter'];
-  const row4 = ['Shift ⇑', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', '↑', '⇑'];
-  const row5 = ['Ctrl', '⊞', 'Alt', '', 'Alt', 'Ctrl', '←', '↓', '→'];
-
-  const nodeList = document.querySelectorAll('.keyboard__btns-row');
-  const arr = [];
-  arr.push(row1, row2, row3, row4, row5);
-  for (let node of nodeList) {
-    const btns = node.querySelectorAll('.keyboard__btn');
-    createRow(btns, arr.splice(0, 1).flat(1));
-  }
-
-  function createRow(btnsRow, strArr) {
-    const resultArr = [].concat(strArr);
-    for (let btn of btnsRow) {
-      btn.innerHTML = resultArr.splice(0, 1);
-    }
+  const idsRow1 = ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal', 'Backspace'];
+  const idsRow2 = ['Tab', 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight', 'Backslash', 'Delete'];
+  const idsRow3 = ['CapsLock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote', 'Enter'];
+  const idsRow4 = ['ShiftLeft', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ArrowUp', 'ShiftRight'];
+  const idsRow5 = ['ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ControlRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight'];
+  const ids = idsRow1.concat(idsRow2, idsRow3, idsRow4, idsRow5);
+  const btns = document.querySelectorAll('.keyboard__btn');
+  for (let i = 0; i < btns.length; i += 1) {
+    btns[i].dataset.code = ids[i];
   }
 }

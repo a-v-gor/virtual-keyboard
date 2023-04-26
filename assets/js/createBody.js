@@ -8,20 +8,6 @@ export default function createBody() {
     parentNode.append(node);
   }
 
-  addNode('header', 'header', document.body);
-  addNode('div', 'wrapper', document.querySelector('.header'));
-  addNode('h1', 'title', document.querySelector('.wrapper'), 'Virtual keyboard');
-  addNode('main', 'main', document.body);
-  addNode('div', 'wrapper keyboard', document.querySelector('.main'));
-  addNode('form', 'keyboard__input-form', document.querySelector('.wrapper.keyboard'));
-  addNode('label', 'keyboard__input-label', document.querySelector('.keyboard__input-form'), 'Text field');
-  document.querySelector('.keyboard__input-label').setAttribute('for', 'input');
-  addNode('textarea', 'keyboard__input-field', document.querySelector('.keyboard__input-form'));
-  document.querySelector('.keyboard__input-field').setAttribute('id', 'input');
-  document.querySelector('.keyboard__input-field').setAttribute('rows', '10');
-  document.querySelector('.keyboard__input-field').setAttribute('cols', '100');
-  addNode('div', 'keyboard__btns-wrapper', document.querySelector('.wrapper.keyboard'));
-
   function addBtnsToRow() {
     for (let rNum = 0; rNum < 5; rNum += 1) {
       let btnNum = 9;
@@ -68,5 +54,18 @@ export default function createBody() {
     }
   }
 
+  addNode('header', 'header', document.body);
+  addNode('div', 'wrapper', document.querySelector('.header'));
+  addNode('h1', 'title', document.querySelector('.wrapper'), 'Virtual keyboard');
+  addNode('main', 'main', document.body);
+  addNode('div', 'wrapper keyboard', document.querySelector('.main'));
+  addNode('form', 'keyboard__input-form', document.querySelector('.wrapper.keyboard'));
+  addNode('label', 'keyboard__input-label', document.querySelector('.keyboard__input-form'), 'Text field');
+  document.querySelector('.keyboard__input-label').setAttribute('for', 'input');
+  addNode('textarea', 'keyboard__input-field', document.querySelector('.keyboard__input-form'));
+  document.querySelector('.keyboard__input-field').setAttribute('id', 'input');
+  document.querySelector('.keyboard__input-field').setAttribute('rows', '10');
+  document.querySelector('.keyboard__input-field').setAttribute('cols', '100');
+  addNode('div', 'keyboard__btns-wrapper', document.querySelector('.wrapper.keyboard'));
   addBtnsToRow();
 }
