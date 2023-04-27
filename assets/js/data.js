@@ -1,5 +1,6 @@
-export default class Data {
-  constructor(lang = 'en') {
-    this.lang = lang;
-  }
-}
+const data = {
+  lang: 'en',
+  caps: false,
+};
+
+export default data;
