@@ -66,6 +66,7 @@ export default function createBody() {
   document.querySelector('.keyboard__input-field').setAttribute('id', 'input');
   document.querySelector('.keyboard__input-field').setAttribute('rows', '10');
   document.querySelector('.keyboard__input-field').setAttribute('cols', '100');
+  document.querySelector('.keyboard__input-field').setAttribute('autofocus', '');
   addNode('div', 'keyboard__btns-wrapper', document.querySelector('.wrapper.keyboard'));
   addBtnsToRow();
   addNode('div', 'keyboard__info', document.querySelector('.wrapper.keyboard'));
