@@ -110,6 +110,7 @@ const btnKeys = {
     Quote: 'Э',
     Enter: 'Enter',
     ShiftLeft: 'Shift ⇑',
+    IntlBackslash: '\\',
     KeyZ: 'Я',
     KeyX: 'Ч',
     KeyC: 'С',
