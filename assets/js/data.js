@@ -1,6 +1,5 @@
 export default class Data {
-  constructor(lang = 'en', caps = false) {
+  constructor(lang = 'en') {
     this.lang = lang;
-    this.caps = caps;
   }
 }
