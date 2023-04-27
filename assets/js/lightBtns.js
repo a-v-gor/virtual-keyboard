@@ -1,13 +1,24 @@
-function highLightBtn(event) {
-  if (!event.code === 'CapsLock') {
-    document.querySelector(`[data-code="${event.code}"]`).classList.add('keyboard__btn_pressed');
+export default function lightBtn(event) {
+  const className = 'keyboard__btn_pressed';
+  const btn = document.querySelector(`[data-code="${event.code}"]`);
+  const capsBtn = document.querySelector(`[data-code="${'CapsLock'}"]`);
+  const capsIsPressed = Array.from(capsBtn.classList).includes(className);
+
+  function addClass() {
+    btn.classList.add(className);
+  }
+
+  function removeClass() {
+    btn.classList.remove(className);
+  }
+
+  if (event.type === 'keydown') {
+    if ((event.code === 'CapsLock') && (capsIsPressed)) {
+      removeClass();
+    } else {
+      addClass();
+    }
+  } else if (!(event.code === 'CapsLock')) {
+    removeClass();
   }
 }
-
-function unHighLightBtn(event) {
-  if (!event.code === 'CapsLock') {
-    document.querySelector(`[data-code="${event.code}"]`).classList.remove('keyboard__btn_pressed');
-  }
-}
-
-export { highLightBtn, unHighLightBtn };
