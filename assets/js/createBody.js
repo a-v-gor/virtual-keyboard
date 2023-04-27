@@ -23,9 +23,7 @@ export default function createBody() {
       for (let i = 0; i < btnNum; i += 1) {
         let btnClassName = 'keyboard__btn';
         if (rNum === 0) {
-          if (i === 0) {
-            btnClassName = 'keyboard__btn keyboard__btn_funk';
-          } else if (i === 13) {
+          if (i === 13) {
             btnClassName = 'keyboard__btn keyboard__btn_long keyboard__btn_funk';
           }
         } else if (rNum === 1) {
