@@ -11,9 +11,15 @@ export default function updBtnKeys() {
   }
 
   const btns = document.querySelectorAll('.keyboard__btn');
+  const lettersArr = ['Backquote', 'BracketLeft', 'BracketRight', 'Semicolon', 'Quote', 'Comma', 'Period'];
   for (let i = 0; i < btns.length; i += 1) {
     const btn = btns[i];
-    const key = btnKeysObj[data.lang][btn.dataset.code];
+    let key = btnKeysObj[data.lang][btn.dataset.code];
+    if (data.caps && !data.shift && (btn.dataset.code.startsWith('Key') || lettersArr.includes(btn.dataset.code))) {
+      key = key.toUpperCase();
+    } else if (data.caps && data.shift && (btn.dataset.code.startsWith('Key') || lettersArr.includes(btn.dataset.code))) {
+      key = key.toLowerCase();
+    }
     btn.innerHTML = key;
   }
 }

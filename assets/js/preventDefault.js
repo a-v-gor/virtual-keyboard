@@ -18,12 +18,13 @@ export default function preventDef(event) {
   }
 
   if (!usBtnArr.includes(event.code)) {
+    console.log('ok');
     event.preventDefault();
   }
 
   if (event.code === 'Tab') {
     addText('  ');
-  } else if (!preventArr.includes(event.code)) {
+  } else if (!preventArr.includes(event.code) && !usBtnArr.includes(event.code)) {
     const btn = document.querySelector(`[data-code="${event.code}"]`);
     addText(btn.innerHTML);
   }
