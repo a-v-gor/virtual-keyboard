@@ -1,6 +1,6 @@
 import fnBtns from './fnBtns.js';
 
-export default function lightBtn(event) {
+export default function lightBtns(event) {
   const className = 'keyboard__btn_pressed';
   const btn = document.querySelector(`[data-code="${event.code}"]`);
   const capsBtn = document.querySelector(`[data-code="${'CapsLock'}"]`);
