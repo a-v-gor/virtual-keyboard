@@ -1,7 +1,11 @@
 import fnBtns from './fnBtns.js';
 
 export default function preventDef(event) {
-  const preventArr = fnBtns.concat(['CapsLock', 'ControlRight', 'Tab', 'AltLeft', 'AltRight']);
+  const preventArr = fnBtns.concat(['Backspace', 'Tab', 'Delete', 'CapsLock', 'ShiftLeft',
+    'ShiftRight', 'ControlLeft', 'MetaLeft', 'AltLeft', 'AltLeft', 'AltLeft', 'AltRight',
+    'ContextMenu', 'ControlRight']);
+
+  const usBtnArr = ['Enter', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight'];
 
   function addText(str) {
     const textArea = document.querySelector('.keyboard__input-field');
@@ -19,9 +23,7 @@ export default function preventDef(event) {
 
   if (event.code === 'Tab') {
     addText('  ');
-  }
-
-  if (event.code.startsWith('Key')) {
+  } else if (!preventArr.includes(event.code) && !usBtnArr.includes(event.code)) {
     const btn = document.querySelector(`[data-code="${event.code}"]`);
     addText(btn.innerHTML);
   }

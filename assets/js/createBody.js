@@ -10,7 +10,7 @@ export default function createBody() {
 
   function addBtnsToRow() {
     for (let rNum = 0; rNum < 5; rNum += 1) {
-      let btnNum = 9;
+      let btnNum = 10;
       if (rNum === 0 || rNum === 3) {
         btnNum = 14;
       } else if (rNum === 1) {
@@ -37,7 +37,7 @@ export default function createBody() {
         } else if (rNum === 3) {
           if (i === 0) {
             btnClassName = 'keyboard__btn keyboard__btn_long keyboard__btn_funk';
-          } else if (i > 10) {
+          } else if (i > 11) {
             btnClassName = 'keyboard__btn keyboard__btn_funk';
           }
         } else if (rNum === 4) {
@@ -75,7 +75,7 @@ export default function createBody() {
   const idsRow2 = ['Tab', 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight', 'Backslash', 'Delete'];
   const idsRow3 = ['CapsLock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote', 'Enter'];
   const idsRow4 = ['ShiftLeft', 'IntlBackslash', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ArrowUp', 'ShiftRight'];
-  const idsRow5 = ['ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ControlRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight'];
+  const idsRow5 = ['ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ContextMenu', 'ControlRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight'];
   const ids = idsRow1.concat(idsRow2, idsRow3, idsRow4, idsRow5);
   const btns = document.querySelectorAll('.keyboard__btn');
   for (let i = 0; i < btns.length; i += 1) {
