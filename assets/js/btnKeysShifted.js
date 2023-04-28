@@ -1,4 +1,4 @@
-const btnKeys = {
+const btnKeysShifted = {
   en: {
     Backquote: '~',
     Digit1: '!',
@@ -137,4 +137,4 @@ const btnKeys = {
   },
 };
 
-export default btnKeys;
+export default btnKeysShifted;
