@@ -13,8 +13,8 @@ function onLoadPage() {
 }
 
 document.addEventListener('DOMContentLoaded', onLoadPage);
-document.addEventListener('keydown', lightBtn);
-document.addEventListener('keyup', lightBtn);
 document.addEventListener('keydown', preventDef);
 document.addEventListener('keydown', watchPressedBtns);
+document.addEventListener('keydown', lightBtn);
+document.addEventListener('keyup', lightBtn);
 document.addEventListener('keyup', watchPressedBtns);

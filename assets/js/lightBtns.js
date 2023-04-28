@@ -1,3 +1,5 @@
+import fnBtns from './fnBtns.js';
+
 export default function lightBtn(event) {
   const className = 'keyboard__btn_pressed';
   const btn = document.querySelector(`[data-code="${event.code}"]`);
@@ -10,6 +12,10 @@ export default function lightBtn(event) {
 
   function removeClass() {
     btn.classList.remove(className);
+  }
+
+  if (fnBtns.includes(event.code)) {
+    return;
   }
 
   if (event.type === 'keydown') {

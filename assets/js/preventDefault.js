@@ -1,4 +1,8 @@
+import fnBtns from './fnBtns.js';
+
 export default function preventDef(event) {
+  const preventArr = fnBtns.concat(['CapsLock', 'ControlRight', 'Tab', 'AltLeft', 'AltRight']);
+
   function addText(str) {
     const textArea = document.querySelector('.keyboard__input-field');
     const start = textArea.selectionStart;
@@ -9,12 +13,11 @@ export default function preventDef(event) {
     textArea.selectionEnd = (start === end) ? (end + str.length) : end;
   }
 
-  if (event.code.startsWith('Key')) {
+  if (preventArr.includes(event.code) || event.code.startsWith('Key')) {
     event.preventDefault();
   }
 
   if (event.code === 'Tab') {
-    event.preventDefault();
     addText('  ');
   }
 
