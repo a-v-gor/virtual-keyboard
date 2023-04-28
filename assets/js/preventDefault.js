@@ -5,7 +5,7 @@ export default function preventDef(event) {
     'ShiftRight', 'ControlLeft', 'MetaLeft', 'AltLeft', 'AltLeft', 'AltLeft', 'AltRight',
     'ContextMenu', 'ControlRight']);
 
-  const usBtnArr = ['Enter', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight'];
+  const usBtnArr = ['Enter', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'Space'];
 
   function addText(str) {
     const textArea = document.querySelector('.keyboard__input-field');
@@ -17,13 +17,13 @@ export default function preventDef(event) {
     textArea.selectionEnd = (start === end) ? (end + str.length) : end;
   }
 
-  if (preventArr.includes(event.code) || event.code.startsWith('Key')) {
+  if (!usBtnArr.includes(event.code)) {
     event.preventDefault();
   }
 
   if (event.code === 'Tab') {
     addText('  ');
-  } else if (!preventArr.includes(event.code) && !usBtnArr.includes(event.code)) {
+  } else if (!preventArr.includes(event.code)) {
     const btn = document.querySelector(`[data-code="${event.code}"]`);
     addText(btn.innerHTML);
   }
