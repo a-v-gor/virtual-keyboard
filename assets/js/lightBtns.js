@@ -14,7 +14,7 @@ export default function lightBtn(event) {
     btn.classList.remove(className);
   }
 
-  if (fnBtns.includes(event.code)) {
+  if (fnBtns.includes(event.code) || !btn) {
     return;
   }
 

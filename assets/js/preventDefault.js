@@ -18,7 +18,6 @@ export default function preventDef(event) {
   }
 
   if (!usBtnArr.includes(event.code)) {
-    console.log('ok');
     event.preventDefault();
   }
 
@@ -26,6 +25,8 @@ export default function preventDef(event) {
     addText('  ');
   } else if (!preventArr.includes(event.code) && !usBtnArr.includes(event.code)) {
     const btn = document.querySelector(`[data-code="${event.code}"]`);
-    addText(btn.innerHTML);
+    if (btn) {
+      addText(btn.innerHTML);
+    }
   }
 }
