@@ -1,10 +1,12 @@
 import data from './data.js';
 import btnKeys from './btnKeys.js';
 import btnKeysShifted from './btnKeysShifted.js';
+import pressedBtns from './pressedBtns.js';
 
 export default function updBtnKeys() {
+  const shiftAlreadyPressed = pressedBtns.has('ShiftLeft') || pressedBtns.has('ShiftRight');
   let btnKeysObj;
-  if (data.shift) {
+  if (shiftAlreadyPressed) {
     btnKeysObj = btnKeysShifted;
   } else {
     btnKeysObj = btnKeys;
@@ -15,9 +17,9 @@ export default function updBtnKeys() {
   for (let i = 0; i < btns.length; i += 1) {
     const btn = btns[i];
     let key = btnKeysObj[data.lang][btn.dataset.code];
-    if (data.caps && !data.shift && (btn.dataset.code.startsWith('Key') || lettersArr.includes(btn.dataset.code))) {
+    if (data.caps && !shiftAlreadyPressed && (btn.dataset.code.startsWith('Key') || lettersArr.includes(btn.dataset.code))) {
       key = key.toUpperCase();
-    } else if (data.caps && data.shift && (btn.dataset.code.startsWith('Key') || lettersArr.includes(btn.dataset.code))) {
+    } else if (data.caps && shiftAlreadyPressed && (btn.dataset.code.startsWith('Key') || lettersArr.includes(btn.dataset.code))) {
       key = key.toLowerCase();
     }
     btn.innerHTML = key;
