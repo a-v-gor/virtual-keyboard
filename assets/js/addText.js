@@ -21,9 +21,16 @@ export default function addText(str) {
     copyStr = '';
     startStr = startStr.substring(0, startStr.length - 1);
   }
+  let numPos;
+  if (str === 'Delete') {
+    numPos = 0;
+  } else if (str === 'Backspace') {
+    numPos = -1;
+  } else {
+    numPos = copyStr.length;
+  }
   const readyStr = startStr + copyStr + endStr;
   textArea.value = readyStr;
   textArea.focus();
-
-  textArea.selectionEnd = (start === end) ? (end + copyStr.length) : end;
+  textArea.selectionEnd = (start === end) ? (end + numPos) : end;
 }
