@@ -66,8 +66,6 @@ export default function createBody() {
   document.querySelector('.keyboard__input-field').setAttribute('cols', '100');
   document.querySelector('.keyboard__input-field').setAttribute('autofocus', '');
   addNode('div', 'keyboard__btns-wrapper', document.querySelector('.wrapper.keyboard'));
-
-  document.querySelector('.keyboard__btns-wrapper').setAttribute('onmousedown', 'return false');
   addBtnsToRow();
   addNode('div', 'keyboard__info', document.querySelector('.wrapper.keyboard'));
   addNode('p', 'keyboard__info-p', document.querySelector('.keyboard__info'), 'Клавиатура создана в ОС Windows.');
