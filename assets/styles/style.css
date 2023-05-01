@@ -1,0 +1,121 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  background-color: #fffaf0;
+}
+
+.header {
+  background-color: #ffebcd;
+}
+
+.title {
+  margin: 0;
+  padding: 1rem 0;
+  font-size: 3rem;
+}
+
+.wrapper {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 1rem 6rem;
+}
+
+.body {
+  min-height: 100%;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 6rem;
+  row-gap: 3rem;
+  background-color: #dcdcdc;
+}
+
+.keyboard__input-label {
+  display: none;
+}
+
+.keyboard__input-field {
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  font-family: "Courier New", "Courier", monospace;
+  color: #ffffff;
+  background-color: #6495ed;
+  border-radius: 1rem;
+}
+
+.keyboard__btns-wrapper {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  row-gap: 1rem;
+  background-color: #fffaf0;
+  border-radius: 1rem;
+}
+
+.keyboard__btns-row {
+  display: flex;
+  max-width: 84rem;
+  column-gap: 1rem;
+}
+
+.keyboard__btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.6rem;
+  height: 4.6rem;
+  font-size: 1.4rem;
+  font-family: "Verdana", "Geneva", "Tahoma", sans-serif;
+  background: linear-gradient(0deg, #dadada 100%, #f3f3f3 100%);
+  border-radius: 3.2rem;
+  user-select: none;
+}
+.keyboard__btn::before {
+  content: "";
+  position: absolute;
+  top: -0.2rem;
+  right: -0.2rem;
+  bottom: -0.2rem;
+  left: -0.2rem;
+  z-index: -1;
+  background: linear-gradient(180deg, #ffffff 100%, #f0f0f0 0%);
+  border-radius: 4.4rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
+.keyboard__btn:hover {
+  border: 3px solid #ffa500;
+  cursor: pointer;
+}
+.keyboard__btn_long {
+  flex-grow: 1;
+  min-width: 10.7rem;
+}
+.keyboard__btn_funk {
+  background: linear-gradient(180deg, #9e9e9e 100%, #bdbdbd 100%);
+}
+.keyboard__btn_funk::before {
+  background: linear-gradient(180deg, #d1d1d1 100%, #ffffff 0%);
+}
+.keyboard__btn_pressed {
+  background: #ffa500;
+}
+
+.keyboard__info-p {
+  margin: 0.5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
