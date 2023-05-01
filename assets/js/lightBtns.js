@@ -7,19 +7,17 @@ export default function lightBtns(event) {
   const btn = document.querySelector(`[data-code="${event.code}"]`);
   const capsBtn = document.querySelector(`[data-code="${'CapsLock'}"]`);
   const capsIsPressed = Array.from(capsBtn.classList).includes(className);
-  const shiftAlreadyPressed = pressedBtns.has('ShiftLeft') || pressedBtns.has('ShiftRight');
-  const audio = new Audio('./assets/audio/pressKey.mp3');
 
   function addClass() {
     btn.classList.add(className);
-    audio.play();
   }
 
   function removeClass() {
     btn.classList.remove(className);
   }
-
-  if (fnBtns.includes(event.code) || !btn || (shiftAlreadyPressed && event.shiftKey)) {
+  if (fnBtns.includes(event.code) || !btn
+  || (pressedBtns.has('ShiftLeft') && (event.code === 'ShiftRight'))
+  || (pressedBtns.has('ShiftRight') && (event.code === 'ShiftLeft'))) {
     return;
   }
 
