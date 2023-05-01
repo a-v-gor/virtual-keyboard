@@ -8,9 +8,11 @@ export default function lightBtns(event) {
   const capsBtn = document.querySelector(`[data-code="${'CapsLock'}"]`);
   const capsIsPressed = Array.from(capsBtn.classList).includes(className);
   const shiftAlreadyPressed = pressedBtns.has('ShiftLeft') || pressedBtns.has('ShiftRight');
+  const audio = new Audio('./assets/audio/pressKey.mp3');
 
   function addClass() {
     btn.classList.add(className);
+    audio.play();
   }
 
   function removeClass() {
