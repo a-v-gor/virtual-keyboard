@@ -2,6 +2,7 @@ import createBody from './createBody.js';
 import updBtnKeys from './updBtnKeys.js';
 import preventDef from './preventDefault.js';
 import getLocalStorage from './getLocalStorage.js';
+import clickedBtns from './clickedBtns.js';
 
 function onLoadPage() {
   createBody();
@@ -10,7 +11,7 @@ function onLoadPage() {
 }
 
 function clickOnKbd(event) {
-  const key = event.target.getAttribute('data-code');
+  let key;
 
   function kDown(str) {
     let EventStr;
@@ -22,6 +23,12 @@ function clickOnKbd(event) {
     return new KeyboardEvent(EventStr, { code: `${key}` });
   }
 
+  if (event.type === 'mousedown') {
+    key = event.target.getAttribute('data-code');
+    clickedBtns.push(key);
+  } else {
+    key = clickedBtns.splice(0, 1);
+  }
   preventDef(kDown(event.type));
 }
 
