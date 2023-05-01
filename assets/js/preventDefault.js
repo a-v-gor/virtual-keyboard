@@ -6,7 +6,7 @@ export default function preventDef(event) {
   const preventArr = fnBtns.concat(['Tab', 'CapsLock', 'ControlLeft',
     'MetaLeft', 'AltLeft', 'AltLeft', 'AltLeft', 'AltRight', 'ContextMenu', 'ControlRight']);
 
-  const usBtnArr = ['Backspace', 'ShiftLeft', 'ShiftRight', 'Delete', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'Space'];
+  const usBtnArr = ['Backspace', 'ShiftLeft', 'ShiftRight', 'Delete', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight'];
 
   if (!usBtnArr.includes(event.code)) {
     event.preventDefault();
