@@ -10,10 +10,10 @@ export default function addText(str) {
     copyStr = str;
   }
   const textArea = document.querySelector('.keyboard__input-field');
-  const start = textArea.selectionStart;
-  const end = textArea.selectionEnd;
-  let startStr = textArea.value.substring(0, start);
-  let endStr = textArea.value.substring(end);
+  textArea.selectionEnd = textArea.selectionStart;
+  const pos = textArea.selectionStart;
+  let startStr = textArea.value.substring(0, pos);
+  let endStr = textArea.value.substring(pos);
   if (str === 'Delete') {
     copyStr = '';
     endStr = endStr.slice(1);
@@ -32,5 +32,5 @@ export default function addText(str) {
   const readyStr = startStr + copyStr + endStr;
   textArea.value = readyStr;
   textArea.focus();
-  textArea.selectionEnd = (start === end) ? (end + numPos) : end;
+  textArea.selectionEnd = pos + numPos;
 }
