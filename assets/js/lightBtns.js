@@ -1,6 +1,7 @@
 import fnBtns from './fnBtns.js';
 import watchPressedBtns from './watchPressedBtns.js';
 import pressedBtns from './pressedBtns.js';
+import audioPlay from './audioPlay.js';
 
 export default function lightBtns(event) {
   const className = 'keyboard__btn_pressed';
@@ -24,8 +25,10 @@ export default function lightBtns(event) {
   if (event.type === 'keydown') {
     if ((event.code === 'CapsLock') && (capsIsPressed)) {
       removeClass();
-    } else {
+      audioPlay();
+    } else if (!event.repeat) {
       addClass();
+      audioPlay();
     }
   } else if (!(event.code === 'CapsLock')) {
     removeClass();
