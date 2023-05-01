@@ -3,10 +3,11 @@ import addText from './addText.js';
 import lightBtns from './lightBtns.js';
 
 export default function preventDef(event) {
+  console.log(event);
   const preventArr = fnBtns.concat(['Tab', 'CapsLock', 'ControlLeft',
     'MetaLeft', 'AltLeft', 'AltLeft', 'AltLeft', 'AltRight', 'ContextMenu', 'ControlRight']);
 
-  const usBtnArr = ['Backspace', 'ShiftLeft', 'ShiftRight', 'Delete', 'Enter', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'Space'];
+  const usBtnArr = ['Backspace', 'ShiftLeft', 'ShiftRight', 'Delete', 'ArrowUp', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'Space'];
 
   if (!usBtnArr.includes(event.code)) {
     event.preventDefault();
@@ -14,6 +15,8 @@ export default function preventDef(event) {
   if (event.type === 'keydown') {
     if (event.code === 'Tab') {
       addText('  ');
+    } else if (event.code === 'Enter') {
+      addText('\n');
     } else if (!preventArr.includes(event.code) && !usBtnArr.includes(event.code)) {
       const btn = document.querySelector(`[data-code="${event.code}"]`);
       if (btn) {
