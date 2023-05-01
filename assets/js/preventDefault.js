@@ -3,7 +3,6 @@ import addText from './addText.js';
 import lightBtns from './lightBtns.js';
 
 export default function preventDef(event) {
-  console.log(event);
   const preventArr = fnBtns.concat(['Tab', 'CapsLock', 'ControlLeft',
     'MetaLeft', 'AltLeft', 'AltLeft', 'AltLeft', 'AltRight', 'ContextMenu', 'ControlRight']);
 
