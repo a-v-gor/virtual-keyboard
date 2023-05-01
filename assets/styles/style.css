@@ -50,6 +50,7 @@ html {
   color: #ffffff;
   background-color: #6495ed;
   border-radius: 1rem;
+  outline: none;
 }
 
 .keyboard__btns-wrapper {
