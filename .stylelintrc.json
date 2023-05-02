@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "stylelint-config-htmlacademy",
+    "stylelint-order-htmlacademy"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "selector-class-pattern": "^([a-z][a-z0-9-]*)(__[a-z][a-z0-9-]+)*(_[a-z][a-z0-9-]+)?$"
+  },
+  "ignoreFiles": [
+    "assets/styles/normalize.css",
+    "assets/styles/style.css"
+  ]
+}
