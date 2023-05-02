@@ -1,0 +1,31 @@
+import fnBtns from './fnBtns.js';
+import addText from './addText.js';
+import lightBtns from './lightBtns.js';
+
+export default function preventDef(event) {
+  const preventArr = fnBtns.concat(['Tab', 'CapsLock', 'ControlLeft',
+    'MetaLeft', 'AltLeft', 'AltLeft', 'AltLeft', 'AltRight', 'ContextMenu', 'ControlRight', 'Delete', 'Backspace']);
+
+  const usBtnArr = ['ShiftLeft', 'ShiftRight'];
+
+  if (!usBtnArr.includes(event.code)) {
+    event.preventDefault();
+  }
+  if (event.type === 'keydown') {
+    if (event.code === 'Tab') {
+      addText('  ');
+    } else if (event.code === 'Delete') {
+      addText('Delete');
+    } else if (event.code === 'Backspace') {
+      addText('Backspace');
+    } else if (event.code === 'Enter') {
+      addText('\n');
+    } else if (!preventArr.includes(event.code) && !usBtnArr.includes(event.code)) {
+      const btn = document.querySelector(`[data-code="${event.code}"]`);
+      if (btn) {
+        addText(btn.innerHTML);
+      }
+    }
+  }
+  lightBtns(event);
+}
